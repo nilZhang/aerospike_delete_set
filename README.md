@@ -14,4 +14,4 @@ sudo pip install aerospike
 
 ## usage
 
-python aeroDeleteSet.py [-h host,default:127.0.0.1] [-p point:3000] -n namespace -s set
+python aeroDeleteSet.py [-h host(default:127.0.0.1)] [-p port(default:3000)] -n namespace -s set
