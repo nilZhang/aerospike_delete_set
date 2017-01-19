@@ -43,7 +43,6 @@ except:
   print("failed to connect to the cluster with", config['hosts'])
   sys.exit(1)
 
-# Records are addressable via a tuple of (namespace, set, key)
 
 
 deleteCount=0;
@@ -58,7 +57,6 @@ def print_result((key, metadata, record)):
     import sys
     print("error: {0}".format(e), file=sys.stderr)
 try:
-  # Write a record
   scan = client.scan(namespace,set)
   scan.select('key')
   scan.foreach(print_result)
@@ -67,6 +65,5 @@ except Exception as e:
   import sys
   print("error: {0}".format(e), file=sys.stderr)
 
-# Read a record
 # Close the connection to the Aerospike cluster
 client.close()
